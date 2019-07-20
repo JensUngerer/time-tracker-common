@@ -5,6 +5,7 @@ export interface ITimeRecordsDocumentData {
     durationStructure: IDuration;
     dateStructure: IDate;
     descriptionArray: string[];
+    _projectId: string;
 }
 
 export interface ITimeRecordsDocument extends ITimeRecordsDocumentData {
