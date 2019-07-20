@@ -4,7 +4,7 @@ import { ITask } from './iTask';
 import { ITimeEntry } from './iTimeEntry'
 
 export interface IStorageData {
-    users: IUser[];
+    // users: IUser[];
     projects: IProject[];
     tasks: ITask[];
     timeEntries: ITimeEntry[];
