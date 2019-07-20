@@ -1,9 +1,12 @@
 import { IDate } from './../iDate';
 import { IDuration } from './../iDuration';
 
-export interface ITimeRecordsDocument {
-    _id: string;
+export interface ITimeRecordsDocumentData {
     durationStructure: IDuration;
     dateStructure: IDate;
-    descriptionArray: string[];    
+    descriptionArray: string[];
+}
+
+export interface ITimeRecordsDocument extends ITimeRecordsDocumentData {
+    _id: string;        
 }
