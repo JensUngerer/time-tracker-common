@@ -1,5 +1,5 @@
 import { IProject } from './../iProject';
 
-export interface IProjectsDocument extends IProject{
+export interface IProjectsDocument extends IProject {
     _id: string;
 }
