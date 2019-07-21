@@ -4,7 +4,7 @@ import { IDuration } from './../iDuration';
 export interface ITimeRecordsDocumentData {
     durationStructure: IDuration;
     dateStructure: IDate;
-    descriptionArray: string[];
+    _taskIds: string[];
     _projectId: string;
 }
 

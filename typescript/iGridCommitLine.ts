@@ -3,7 +3,7 @@ import { IDuration } from './iDuration';
 
 export interface IGridCommitLine {
     description: string;
-    descriptionArr: string[];
+    _taskIds: string[];
     durationStructure: IDuration;
     dateStructure: IDate;
     durationStr: string;
