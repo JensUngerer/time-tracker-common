@@ -18,6 +18,15 @@ var routes = {
     
     projectsCollectionName: 'projects',
     projectBodyProperty: 'project',
-    project: '/NodeJS/projects'
+    project: '/NodeJS/projects',
+
+    httpPatchIdPropertyName: 'idName',
+    httpPatchIdPropertyValue: 'idValue',
+
+    httpPatchIdPropertyToUpdateName: 'propertyName',
+    httpPatchIdPropertyToUpdateValue: 'propertyValue',
+
+    isDeletedInClientProperty: 'isDeletedInClient',
+    projectIdProperty: 'projectId'
 };
 module.exports = routes;
