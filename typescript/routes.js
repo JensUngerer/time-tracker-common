@@ -27,6 +27,8 @@ var routes = {
     httpPatchIdPropertyToUpdateValue: 'propertyValue',
 
     isDeletedInClientProperty: 'isDeletedInClient',
-    projectIdProperty: 'projectId'
+    projectIdProperty: 'projectId',
+
+    taskIdProperty: 'taskId'
 };
 module.exports = routes;
