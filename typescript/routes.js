@@ -42,6 +42,8 @@ var routes = {
 
     startTimeProperty: 'startTime',
     timeEntryPausePathSuffix: '/pauses',
-    pausesProperty: 'pauses'
+    pausesProperty: 'pauses',
+
+    durationProperty: 'duration'
 }
 module.exports = routes;
