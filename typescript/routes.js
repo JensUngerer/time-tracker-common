@@ -33,6 +33,11 @@ var routes = {
 
     timEntriesCollectionName: 'timeEntries',
     timeEntriesBodyProperty: 'timeEntries',
-    timeEntries: '/NodeJS/timeEntries'
-};
+    timeEntries: '/NodeJS/timeEntries',
+
+    endDateProperty: 'endTime',
+    timeEntriesStopPathSuffix: '/stop',
+    timeEntriesDeletePathSuffix: '/delete',
+    timeEntryIdProperty: 'timeEntryId'
+}
 module.exports = routes;
