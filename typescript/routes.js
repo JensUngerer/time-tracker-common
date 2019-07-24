@@ -29,6 +29,10 @@ var routes = {
     isDeletedInClientProperty: 'isDeletedInClient',
     projectIdProperty: 'projectId',
 
-    taskIdProperty: 'taskId'
+    taskIdProperty: 'taskId',
+
+    timEntriesCollectionName: 'timeEntries',
+    timeEntriesBodyProperty: 'timeEntries',
+    timeEntries: '/NodeJS/timeEntries'
 };
 module.exports = routes;
