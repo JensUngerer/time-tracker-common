@@ -38,6 +38,10 @@ var routes = {
     endDateProperty: 'endTime',
     timeEntriesStopPathSuffix: '/stop',
     timeEntriesDeletePathSuffix: '/delete',
-    timeEntryIdProperty: 'timeEntryId'
+    timeEntryIdProperty: 'timeEntryId',
+
+    startTimeProperty: 'startTime',
+    timeEntryPausePathSuffix: '/pauses',
+    pausesProperty: 'pauses'
 }
 module.exports = routes;
