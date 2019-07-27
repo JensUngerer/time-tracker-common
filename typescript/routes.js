@@ -38,6 +38,7 @@ var routes = {
     endDateProperty: 'endTime',
     timeEntriesStopPathSuffix: '/stop',
     timeEntriesDeletePathSuffix: '/delete',
+    timeEntriesDurationSuffix: '/duration',
     timeEntryIdProperty: 'timeEntryId',
 
     startTimeProperty: 'startTime',
