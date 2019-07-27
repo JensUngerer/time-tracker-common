@@ -45,6 +45,9 @@ var routes = {
     timeEntryPausePathSuffix: '/pauses',
     pausesProperty: 'pauses',
 
-    durationProperty: 'duration'
+    durationProperty: 'duration',
+    projectIdPropertyAsForeignKey: '_projectId',
+    taskIdPropertyAsForeignKey: '_taskId',
+    timeEntriesDurationSumSuffix: '/durationSum'
 }
 module.exports = routes;
