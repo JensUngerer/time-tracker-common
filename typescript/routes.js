@@ -48,6 +48,7 @@ var routes = {
     durationProperty: 'duration',
     projectIdPropertyAsForeignKey: '_projectId',
     taskIdPropertyAsForeignKey: '_taskId',
-    timeEntriesDurationSumSuffix: '/durationSum'
+    timeEntriesDurationSumSuffix: '/durationSum',
+    deleteTimeEntryByTaskIdSuffix: '/deleteByTaskId'
 }
 module.exports = routes;
