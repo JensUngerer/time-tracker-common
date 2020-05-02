@@ -9,6 +9,8 @@ var routes = {
     databaseName: 'timeTracker',
 
     bookingDeclarationsCollectionName: 'bookingDeclarations',
+    bookingDeclarationProperty: 'bookingDeclaration',
+    bookingDeclaration: '/NodeJS/bookingDeclaration',
 
     timeRecordsCollectionName: 'timeRecords',
     timeRecordBodyProperty: 'timeRecord',
