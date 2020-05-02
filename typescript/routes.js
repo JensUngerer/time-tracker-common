@@ -8,6 +8,8 @@ var routes = {
     port: 3000,
     databaseName: 'timeTracker',
 
+    bookingDeclarationsCollectionName: 'bookingDeclarations',
+
     timeRecordsCollectionName: 'timeRecords',
     timeRecordBodyProperty: 'timeRecord',
     timeRecord: '/NodeJS/timeRecords',
