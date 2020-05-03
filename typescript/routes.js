@@ -11,6 +11,8 @@ var routes = {
     bookingDeclarationsCollectionName: 'bookingDeclarations',
     bookingDeclarationProperty: 'bookingDeclaration',
     bookingDeclaration: '/NodeJS/bookingDeclaration',
+    bookingDeclarationsByProjectIdSuffix: '/bookingDeclarationProjectId',
+    bookingDeclarationProjectIdsProperty: '_projectIds',
 
     timeRecordsCollectionName: 'timeRecords',
     timeRecordBodyProperty: 'timeRecord',
