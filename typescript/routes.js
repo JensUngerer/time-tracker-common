@@ -56,6 +56,8 @@ var routes = {
     taskIdPropertyAsForeignKey: '_taskId',
     timeEntriesDurationSumSuffix: '/durationSum',
     deleteTimeEntryByTaskIdSuffix: '/deleteByTaskId',
-    timeEntriesViaTaskIdSuffix: '/taskId'
+    timeEntriesViaTaskIdSuffix: '/taskId',
+
+    dayPropertyName: 'day'
 }
 module.exports = routes;

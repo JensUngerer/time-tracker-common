@@ -6,5 +6,7 @@ export interface ITimeEntry {
     startTime: Date;
     endTime: Date;
     duration: number;
-    pauses: Array<IPause>
+    pauses: Array<IPause>;
+    day: Date;
+    _bookingDeclarationId: string;
 }
