@@ -6,4 +6,5 @@ export interface ICommit  {
     booking: IBookingDeclaration;
     durationInHours: number;
     durationSumInMilliseconds: number;
+    _timeEntryIds: string[];
 }
