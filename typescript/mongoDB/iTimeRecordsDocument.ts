@@ -11,7 +11,10 @@ export interface ITimeRecordsDocumentData {
     dateStructure: IDate;
     // _taskIds: string[];
     // _projectId: string;
+    durationInMilliseconds: number;
+    durationInHours: number;
     _timeEntryIds: string[];
+    _bookingDeclarationId: string;
 }
 
 export interface ITimeRecordsDocument extends ITimeRecordsDocumentData {
