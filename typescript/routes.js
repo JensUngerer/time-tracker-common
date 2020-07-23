@@ -8,14 +8,16 @@ var routes = {
     port: 3000,
     databaseName: 'timeTracker',
 
-    bookingDeclarationsCollectionName: 'bookingDeclarations',
+    bookingDeclarationsCollectionName: 'booking-declarations',
     bookingDeclarationProperty: 'bookingDeclaration',
     bookingDeclaration: '/NodeJS/bookingDeclaration',
     bookingDeclarationsByProjectIdSuffix: '/bookingDeclarationProjectId',
     bookingDeclarationProjectIdsProperty: '_projectIds',
     bookingDeclarationBookingDeclarationIdProperty: 'bookingDeclarationId',
 
-    timeRecordsCollectionName: 'timeRecords',
+    commitTimeRecordsCollectionName: 'commit-time-records',
+
+    timeRecordsCollectionName: 'book-time-records',
     timeRecordBodyProperty: 'timeRecord',
     timeRecord: '/NodeJS/timeRecords',
 
@@ -38,7 +40,7 @@ var routes = {
 
     taskIdProperty: 'taskId',
 
-    timEntriesCollectionName: 'timeEntries',
+    timEntriesCollectionName: 'time-entries',
     timeEntriesBodyProperty: 'timeEntries',
     timeEntries: '/NodeJS/timeEntries',
 
