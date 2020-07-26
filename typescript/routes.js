@@ -58,6 +58,7 @@ var routes = {
     projectIdPropertyAsForeignKey: '_projectId',
     taskIdPropertyAsForeignKey: '_taskId',
     timeEntriesDurationSumSuffix: '/durationSum',
+    timeEntriesDurationSumTasksSuffix: '/durationSumTasks',
     deleteTimeEntryByTaskIdSuffix: '/deleteByTaskId',
     timeEntriesViaTaskIdSuffix: '/taskId',
 
