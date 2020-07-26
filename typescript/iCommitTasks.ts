@@ -1,9 +1,7 @@
 
 import  {ITask} from './iTask';
+import { ICommitBase } from './iCommitBase';
 
-export interface ICommitTask { 
-    task: ITask;
-    durationInHours: number;
-    durationSumInMilliseconds: number;
-    _timeEntryIds: string[];
+export interface ICommitTask extends ICommitBase { 
+    basis: ITask;
 }

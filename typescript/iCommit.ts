@@ -1,10 +1,6 @@
 import { IBookingDeclaration } from './iBookingDeclaration';
+import { ICommitBase as ICommitSumBase } from './iCommitBase';
 
-export interface ICommit  {
-    // endTime: Date;
-    // bookingDeclarationId: string;
-    booking: IBookingDeclaration;
-    durationInHours: number;
-    durationSumInMilliseconds: number;
-    _timeEntryIds: string[];
+export interface ICommit extends ICommitSumBase {
+    basis: IBookingDeclaration;
 }

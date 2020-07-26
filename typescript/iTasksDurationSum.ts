@@ -1,6 +1,6 @@
 import { ICommitTask } from "./iCommitTasks";
+import { IDurationSumBase } from "./iDurationSumBase";
 
-export interface ITasksDurationSum {
-    day: Date; // only for visualization purposes
+export interface ITasksDurationSum extends IDurationSumBase {
     durations: ICommitTask[];
 }

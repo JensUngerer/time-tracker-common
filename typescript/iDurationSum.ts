@@ -1,6 +1,6 @@
 import { ICommit } from './iCommit';
+import { IDurationSumBase } from './iDurationSumBase';
 
-export interface IDurationSum {
-    day: Date; // only for visualization purposes
+export interface IDurationSum extends IDurationSumBase {
     durations: ICommit[];
 }
