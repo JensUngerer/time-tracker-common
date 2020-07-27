@@ -35,7 +35,9 @@ var routes = {
     httpPatchIdPropertyToUpdateName: 'propertyName',
     httpPatchIdPropertyToUpdateValue: 'propertyValue',
 
-    isDeletedInClientProperty: 'isDeletedInClient',
+    isDeletedInClientProperty: 'isDisabledInBooking',
+    isDisabledProperty: 'isDisabled',
+    isDisabledInCommit: 'isDisabledInCommit',
     projectIdProperty: 'projectId',
 
     taskIdProperty: 'taskId',
