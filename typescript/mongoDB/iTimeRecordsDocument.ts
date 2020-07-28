@@ -15,6 +15,7 @@ export interface ITimeRecordsDocumentData {
     durationInHours: number;
     _timeEntryIds: string[];
     _bookingDeclarationId: string;
+    _taskId: string;
 }
 
 export interface ITimeRecordsDocument extends ITimeRecordsDocumentData {
