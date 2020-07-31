@@ -5,9 +5,12 @@ import { IDate } from "../iDate";
 
 export class DurationCalculator {
     public static getDayFrom(aFullDate: Date) {
-        const year = aFullDate.getFullYear();
-        const month = aFullDate.getMonth();
-        const date = aFullDate.getDate() + 1;
+        // const year = aFullDate.getFullYear();
+        // const month = aFullDate.getMonth();
+        // const date = aFullDate.getDate() + 1;
+        const year = aFullDate.getUTCFullYear();
+        const month = aFullDate.getUTCMonth();
+        const date = aFullDate.getUTCDate() + 1;
 
         // https://stackoverflow.com/questions/3894048/what-is-the-best-way-to-initialize-a-javascript-date-to-midnight
         const dayDate = new Date(year, month, date);
