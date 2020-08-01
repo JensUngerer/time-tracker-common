@@ -16,6 +16,7 @@ export interface ITimeRecordsDocumentData {
     _timeEntryIds: string[];
     _bookingDeclarationId: string;
     _taskId: string;
+    // collectionName: string;
 }
 
 export interface ITimeRecordsDocument extends ITimeRecordsDocumentData {
