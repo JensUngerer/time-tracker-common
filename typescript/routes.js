@@ -5,7 +5,7 @@ var routes = {
     viewsPrefix: 'view/',
 
     url: 'mongodb://localhost:27021',
-    port: 3000,
+    port: 3021,
     databaseName: 'timeTracker',
 
     collectionNamePropertyName: 'propertyName',
