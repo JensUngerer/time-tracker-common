@@ -9,6 +9,9 @@ export class Serialization {
 
         const dateTimeReceiver = (key: any, value: any) => {
             if (key === 'startTime' || key === 'endTime' || key === 'day') {
+                if (value === null) {
+                    return null;
+                }
                 return new Date(value);
             } else {
                 return value;
