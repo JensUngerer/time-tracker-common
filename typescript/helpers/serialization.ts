@@ -1,6 +1,6 @@
 export class Serialization {
     static serialize<T>(data: T): string {
-        return JSON.stringify(data);
+        return JSON.stringify(data, null, 4);
     }
 
     static deSerialize<T>(dataStr: string): T {
