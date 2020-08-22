@@ -29,6 +29,7 @@ var routes = {
     
     projectsCollectionName: 'projects',
     projectBodyProperty: 'project',
+    projectByTaskIdSuffix: '/taskId',
     project: '/NodeJS/projects',
 
     httpPatchIdPropertyName: 'idName',
@@ -52,6 +53,7 @@ var routes = {
     timeEntriesStopPathSuffix: '/stop',
     timeEntriesDeletePathSuffix: '/delete',
     timeEntriesDurationSuffix: '/duration',
+    timeEntriesRunningSuffix: '/running',
     timeEntryIdProperty: 'timeEntryId',
 
     startTimeProperty: 'startTime',
