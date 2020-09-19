@@ -55,6 +55,7 @@ var routes = {
     timeEntriesDeletePathSuffix: '/delete',
     timeEntriesDurationSuffix: '/duration',
     timeEntriesRunningSuffix: '/running',
+    timeEntriesStatisticsSufffix: '/statistics',
     timeEntryIdProperty: 'timeEntryId',
 
     startTimeProperty: 'startTime',
