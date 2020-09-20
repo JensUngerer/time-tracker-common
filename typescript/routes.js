@@ -27,6 +27,7 @@ var routes = {
     tasksCollectionName: 'tasks',
     taskBodyProperty: 'task',
     task: '/NodeJS/tasks',
+    taskIdSuffix: '/id',
     
     projectsCollectionName: 'projects',
     projectBodyProperty: 'project',
