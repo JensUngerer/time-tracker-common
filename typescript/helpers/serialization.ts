@@ -1,4 +1,12 @@
 export class Serialization {
+    private static dateKeys: string[] = [
+        'startTime',
+        'endTime',
+        'day',
+        'utcStartTime',
+        'utcEndTime'
+    ];
+
     static serialize<T>(data: T): string {
         return JSON.stringify(data, null, 4);
     }
@@ -8,7 +16,7 @@ export class Serialization {
         // https://stackoverflow.com/questions/4511705/how-to-parse-json-to-receive-a-date-object-in-javascript
 
         const dateTimeReceiver = (key: any, value: any) => {
-            if (key === 'startTime' || key === 'endTime' || key === 'day') {
+            if (Serialization.dateKeys.includes(key)) {
                 if (value === null) {
                     return null;
                 }
