@@ -3,6 +3,7 @@ export interface ITask {
     name: string;
     taskId: string;
     taskCategory: string;
+    groupCategory: string;
     _bookingDeclarationId: string;
     _projectId?: string;
 }
