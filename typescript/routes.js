@@ -71,6 +71,8 @@ var routes = {
     deleteTimeEntryByTaskIdSuffix: '/deleteByTaskId',
     timeEntriesViaTaskIdSuffix: '/taskId',
 
-    dayPropertyName: 'day'
+    dayPropertyName: 'day',
+    taskCategoryPropertyName: 'taskCategory',
+    groupCategoryPropertyName: 'groupCategory'
 }
 module.exports = routes;
