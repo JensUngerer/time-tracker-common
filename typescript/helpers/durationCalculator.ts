@@ -4,18 +4,29 @@ import { IDuration } from "../iDuration";
 import { IDate } from "../iDate";
 
 export class DurationCalculator {
+    private static yearMonthDate(aFullDate: Date) {
+        const year = aFullDate.getUTCFullYear();
+        const month = aFullDate.getUTCMonth();
+        const date = aFullDate.getUTCDate() + 1;
+        const dayDate = new Date(year, month, date);
+        return dayDate;
+    }
+
     public static getDayFrom(aFullDate: Date) {
         // const year = aFullDate.getFullYear();
         // const month = aFullDate.getMonth();
         // const date = aFullDate.getDate() + 1;
-        const year = aFullDate.getUTCFullYear();
-        const month = aFullDate.getUTCMonth();
-        const date = aFullDate.getUTCDate() + 1;
-
+ 
+        const dayDate = DurationCalculator.yearMonthDate(aFullDate);
         // https://stackoverflow.com/questions/3894048/what-is-the-best-way-to-initialize-a-javascript-date-to-midnight
-        const dayDate = new Date(year, month, date);
         // dayDate.setHours(0, 0, 0, 0);
         dayDate.setUTCHours(0, 0, 0, 0);
+        return dayDate;
+    }
+
+    public static getLatestDayFrom(aFullDate: Date) {
+        const dayDate = DurationCalculator.yearMonthDate(aFullDate);
+        dayDate.setUTCHours(23, 59, 59, 999);
         return dayDate;
     }
 

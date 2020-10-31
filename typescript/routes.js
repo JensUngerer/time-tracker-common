@@ -70,6 +70,7 @@ var routes = {
     timeEntriesDurationSumTasksSuffix: '/durationSumTasks',
     deleteTimeEntryByTaskIdSuffix: '/deleteByTaskId',
     timeEntriesViaTaskIdSuffix: '/taskId',
+    nonCommittedDaysSuffix: '/nonCommittedDays',
 
     dayPropertyName: 'day',
     taskCategoryPropertyName: 'taskCategory',
