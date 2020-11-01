@@ -7,6 +7,7 @@ export interface ITaskLine {
 }
 
 export interface ISummarizedTasks {
+    _timeEntryIds: string[];
     category: string;
     lines: ITaskLine[];
     durationSum: number;
