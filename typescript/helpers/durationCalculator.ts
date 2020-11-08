@@ -36,7 +36,7 @@ export class DurationCalculator {
         const month = dateObject.getMonth() + 1;
         const year = dateObject.getFullYear();
         return {
-            day,
+            dayOfMonth: day,
             month,
             year   
         }
