@@ -75,6 +75,8 @@ var routes = {
 
     dayPropertyName: 'day',
     taskCategoryPropertyName: 'taskCategory',
-    groupCategoryPropertyName: 'groupCategory'
+    groupCategoryPropertyName: 'groupCategory',
+
+    isTakenCareIsDisabledPropertyName: 'isTakenCareIsDisabled'
 }
 module.exports = routes;
