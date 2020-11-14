@@ -4,4 +4,6 @@ export interface IStatistic {
     identifier: string;
     identifierUrl: string;
     description: string;
+    uniqueId: string;
+    _timeEntryIds: string[];
 }
