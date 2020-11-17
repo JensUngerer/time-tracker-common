@@ -1,5 +1,4 @@
 import { ITimeEntryDocument } from "../mongoDB/iTimeEntryDocument";
-import { IPause } from "../iPause";
 import { IDuration } from "../iDuration";
 import { IDate } from "../iDate";
 
@@ -58,19 +57,6 @@ export class DurationCalculator {
     }
 
     public static calculateTimeDifferenceWithoutPauses(timeEntry: ITimeEntryDocument): number {
-        let pausesDuration = 0;
-        timeEntry.pauses.forEach((onePause: IPause) => {
-            if (onePause.startTime && onePause.endTime) {
-                pausesDuration += DurationCalculator.getTimeDifferenceInMilliseconds(onePause.endTime, onePause.startTime);
-                return;
-            }
-            if (onePause.startTime && !onePause.endTime) {
-                console.error('one pause has no endTime to startTime:' + onePause.startTime);
-                pausesDuration += DurationCalculator.getTimeDifferenceInMilliseconds(new Date(), onePause.startTime);
-                return;
-            }
-            console.error('pause has neither startTime nor endTime');
-        });
         let trackedDurationInMilliseconds = 0;
         if (timeEntry.endTime && timeEntry.startTime) {
             trackedDurationInMilliseconds = DurationCalculator.getTimeDifferenceInMilliseconds(timeEntry.endTime, timeEntry.startTime);
@@ -82,8 +68,6 @@ export class DurationCalculator {
         if (trackedDurationInMilliseconds === 0) {
             console.error('neither endTime nor startTime');
         }
-
-        trackedDurationInMilliseconds = trackedDurationInMilliseconds - pausesDuration;
 
         return trackedDurationInMilliseconds;
     }

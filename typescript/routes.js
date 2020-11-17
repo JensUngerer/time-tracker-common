@@ -61,8 +61,6 @@ var routes = {
     isBookingBasedPropertyName: 'isBookingBased',
 
     startTimeProperty: 'startTime',
-    timeEntryPausePathSuffix: '/pauses',
-    pausesProperty: 'pauses',
 
     durationProperty: 'durationInMilliseconds',
     projectIdPropertyAsForeignKey: '_projectId',
