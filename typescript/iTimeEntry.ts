@@ -5,7 +5,7 @@ export interface ITimeEntry {
     _taskId: string;
     startTime: Date;
     endTime: Date;
-    duration: number;
+    durationInMilliseconds: number;
     pauses: Array<IPause>;
     day: Date;
     _bookingDeclarationId: string;

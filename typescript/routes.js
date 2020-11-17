@@ -64,7 +64,7 @@ var routes = {
     timeEntryPausePathSuffix: '/pauses',
     pausesProperty: 'pauses',
 
-    durationProperty: 'duration',
+    durationProperty: 'durationInMilliseconds',
     projectIdPropertyAsForeignKey: '_projectId',
     taskIdPropertyAsForeignKey: '_taskId',
     timeEntriesDurationSumSuffix: '/durationSum',
