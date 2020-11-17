@@ -75,6 +75,8 @@ var routes = {
     taskCategoryPropertyName: 'taskCategory',
     groupCategoryPropertyName: 'groupCategory',
 
-    isTakenCareIsDisabledPropertyName: 'isTakenCareIsDisabled'
+    isTakenCareIsDisabledPropertyName: 'isTakenCareIsDisabled',
+
+    durationSumInMillisecondsPropertyName: 'durationSumInMilliseconds'
 }
 module.exports = routes;
