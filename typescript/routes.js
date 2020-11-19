@@ -77,6 +77,6 @@ var routes = {
 
     isTakenCareIsDisabledPropertyName: 'isTakenCareIsDisabled',
 
-    durationSumInMillisecondsPropertyName: 'durationSumInMilliseconds'
+    durationSumInMillisecondsPropertyName: 'durationSumInMillisecondsMap'
 }
 module.exports = routes;
