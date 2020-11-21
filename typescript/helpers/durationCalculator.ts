@@ -26,7 +26,10 @@ export class DurationCalculator {
     public static getLatestDayFrom(aFullDate: Date) {
         const dayDate = DurationCalculator.yearMonthDate(aFullDate);
         dayDate.setUTCHours(23, 59, 59, 999);
-        return dayDate;
+        const ONE_MILLISECOND_TO_ACHIEVE_AN_OVERFLOW = 1;
+        const getTimeNextDay = dayDate.getTime() + ONE_MILLISECOND_TO_ACHIEVE_AN_OVERFLOW;
+        const nextDay = new Date(getTimeNextDay);
+        return nextDay;
     }
 
     public static getCurrentDateStructure(dateObject: Date): IDate {
