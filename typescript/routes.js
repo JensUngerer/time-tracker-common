@@ -59,6 +59,7 @@ var routes = {
     timeEntriesStatisticsSufffix: '/statistics',
     timeEntryIdProperty: 'timeEntryId',
     isBookingBasedPropertyName: 'isBookingBased',
+    timeEntriesIntervalSuffix: '/interval',
 
     startTimeProperty: 'startTime',
 
