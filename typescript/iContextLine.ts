@@ -3,5 +3,6 @@ export interface IContextLine {
     taskId: string;
     taskName: string;
     taskNumber: string;
+    taskNumberUrl: string;
     duration: string;
 }
