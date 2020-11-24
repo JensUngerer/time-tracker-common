@@ -1,8 +1,10 @@
+// import invert, { RGB }from 'invert-color';
+
 export interface IColor {
-    red: number;
-    green: number;
-    blue: number;
-    opacity: string;
+    r: number;
+    g: number;
+    b: number;
+    // opacity: string;
 }
 
 export interface IColorPair {
@@ -11,6 +13,25 @@ export interface IColorPair {
 }
 
 export class ColorsGenerator {
+    // https://stackoverflow.com/questions/9733288/how-to-programmatically-calculate-the-contrast-ratio-between-two-colors
+    static luminanace(r, g, b) {
+        var a = [r, g, b].map(function (v) {
+            v /= 255;
+            return v <= 0.03928
+                ? v / 12.92
+                : Math.pow( (v + 0.055) / 1.055, 2.4 );
+        });
+        return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+    }
+    static contrast(rgb1: IColor, rgb2: IColor) {
+        var lum1 = ColorsGenerator.luminanace(rgb1.r, rgb1.g, rgb1.b);
+        var lum2 = ColorsGenerator.luminanace(rgb2.r, rgb2.g, rgb2.b);
+        var brightest = Math.max(lum1, lum2);
+        var darkest = Math.min(lum1, lum2);
+        return (brightest + 0.05)
+             / (darkest + 0.05);
+    }
+
     static ensureTwoDigits(raw: string) {
         if (!raw) {
             return '';
@@ -31,10 +52,10 @@ export class ColorsGenerator {
         const blue = o(r() * s);
         const opacity = r().toFixed(1);
         const color = {
-            red,
-            green,
-            blue,
-            opacity
+            r: red,
+            g: green,
+            b: blue,
+            // opacity
         };
 
         return color;
@@ -42,9 +63,9 @@ export class ColorsGenerator {
 
     static getHexColorRepresentation(color: IColor) {
         try {
-            const redColor = color.red.toString(16);
-            const greenColor = color.green.toString(16);
-            const blueColor = color.blue.toString(16);
+            const redColor = color.r.toString(16);
+            const greenColor = color.g.toString(16);
+            const blueColor = color.b.toString(16);
             const concatenated = ColorsGenerator.ensureTwoDigits(redColor) + ColorsGenerator.ensureTwoDigits(greenColor) + ColorsGenerator.ensureTwoDigits(blueColor);
             return concatenated;
         } catch(e) {
@@ -54,15 +75,36 @@ export class ColorsGenerator {
 
     static getInverseColorHex(color: IColor): string {
         // https://stackoverflow.com/questions/18141976/how-to-invert-an-rgb-color-in-integer-form
-        const concatenated = '0x' + ColorsGenerator.getHexColorRepresentation(color);
-        try {
-            const colorCode = parseInt(concatenated, 16);
-            const baseColorCode = parseInt('0xFFFFFF', 16);
-            const inverseColor = baseColorCode - colorCode;
-            const inverseColorHex = inverseColor.toString(16);
-            return inverseColorHex;
-        } catch (e) {
-            return '';
+        // https://stackoverflow.com/questions/35969656/how-can-i-generate-the-opposite-color-according-to-current-color
+        // https://github.com/onury/invert-color
+        // const concatenated = /*'0x' + */ ColorsGenerator.getHexColorRepresentation(color);
+        // try {
+        //     const colorCode = parseInt(concatenated, 16);
+        //     const baseColorCode = parseInt('FFFFFF', 16);
+        //     const inverseColor = baseColorCode - colorCode;
+        //     const inverseColorHex = inverseColor.toString(16);
+        //     return inverseColorHex;
+        // } catch (e) {
+        //     return '';
+        // }
+        // return invert(color, true);
+        const black: IColor = {
+            r: 0,
+            g: 0,
+            b: 0
+        };
+        const white: IColor = {
+            r: 255,
+            g: 255,
+            b: 255
+        };
+        const contrastToBlack = ColorsGenerator.contrast(black, color);
+        const contrastToWhite = ColorsGenerator.contrast(white, color);
+
+        if (contrastToBlack >= contrastToWhite) {
+            return '000000';
+        } else {
+            return 'FFFFFF';
         }
     }
 
@@ -102,7 +144,7 @@ export class ColorsGenerator {
 
         // DEBUGGING
         // console.log(inverseColorAsRgba);
-        const colorAsRgba = 'rgba(' + color.red + ',' + color.green + ',' + color.blue + ',' + color.opacity + ')';
+        const colorAsRgba = 'rgba(' + color.r + ',' + color.g + ',' + color.b + ',' + 1.0 + ')';
 
         // https://stackoverflow.com/questions/7015302/css-hexadecimal-rgba
         return colorAsRgba;
