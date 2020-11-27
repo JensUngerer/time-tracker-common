@@ -1,6 +1,7 @@
 import { ITimeEntryDocument } from "../mongoDB/iTimeEntryDocument";
 import { IDuration } from "../iDuration";
 import { IDate } from "../iDate";
+import { DurationFormatter } from "./durationFormatter";
 
 export class DurationCalculator {
     private static yearMonthDate(aFullDate: Date) {
@@ -45,12 +46,12 @@ export class DurationCalculator {
     }
 
     public static getSumDataStructureFromMilliseconds(milliseconds: number): IDuration {
-        milliseconds = Math.floor(milliseconds / 1000);
-        const seconds = milliseconds % 60;
-        milliseconds = Math.floor(milliseconds / 60);
-        const minutes = milliseconds % 60;
-        milliseconds = Math.floor(milliseconds / 60);
-        const hours = milliseconds % 60;
+        milliseconds = Math.floor(milliseconds / DurationFormatter.MILLISECONDS_IN_SECOND);
+        const seconds = milliseconds %  DurationFormatter.SECONDS_IN_MINUTE;
+        milliseconds = Math.floor(milliseconds /  DurationFormatter.SECONDS_IN_MINUTE);
+        const minutes = milliseconds % DurationFormatter.SECONDS_IN_MINUTE;
+        milliseconds = Math.floor(milliseconds / DurationFormatter.MINUTES_IN_HOUR);
+        const hours = milliseconds % DurationFormatter.MINUTES_IN_HOUR;
 
         return {
             hours,
@@ -76,16 +77,6 @@ export class DurationCalculator {
     }
     public static calculateDuration(doc: ITimeEntryDocument): string {
         let milliseconds = DurationCalculator.calculateTimeDifferenceWithoutPauses(doc);
-        
-        // DEBUGGING:
-        // console.error('milliseconds:' + milliseconds / 1000);
-        
-        // milliseconds = Math.floor(milliseconds / 1000);
-        // const seconds = milliseconds % 60;
-        // milliseconds = Math.floor(milliseconds / 60);
-        // const minutes = milliseconds % 60;
-        // milliseconds = Math.floor(milliseconds / 60);
-        // const hours = milliseconds % 60;
         const duration = DurationCalculator.getSumDataStructureFromMilliseconds(milliseconds);
         return DurationCalculator.getFullDurationStr(duration.hours, duration.minutes, duration.seconds);
     }

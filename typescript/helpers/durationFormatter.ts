@@ -1,4 +1,9 @@
 export class DurationFormatter {
+    public static MILLISECONDS_IN_SECOND = 1000;
+    public static SECONDS_IN_MINUTE = 60;
+    public static MINUTES_IN_HOUR = 60;
+    public static HOURS_IN_DAY = 24;
+
     private static ensureTwoDigits(aValue: number) {
         const convertedValue = aValue.toString();
         if (convertedValue.length === 2) {
@@ -21,19 +26,15 @@ export class DurationFormatter {
     }
 
     static convertToDuration(durationInMilliseconds: number) {
-        const MILLISECONDS_IN_SECOND = 1000;
-        const SECONDS_IN_MINUTE = 60;
-        const MINUTES_IN_HOUR = 60;
-        const HOURS_IN_DAY = 24;
         let timeBuffer = durationInMilliseconds;
-        const milliseconds = timeBuffer % MILLISECONDS_IN_SECOND;
-        timeBuffer = Math.floor(timeBuffer / MILLISECONDS_IN_SECOND);
-        const seconds = timeBuffer % SECONDS_IN_MINUTE;
-        timeBuffer = Math.floor(timeBuffer / SECONDS_IN_MINUTE);
-        const minutes = timeBuffer % MINUTES_IN_HOUR;
-        timeBuffer = Math.floor(timeBuffer / MINUTES_IN_HOUR);
-        const hours = timeBuffer % HOURS_IN_DAY;
-        timeBuffer = timeBuffer / HOURS_IN_DAY;
+        const milliseconds = timeBuffer % DurationFormatter.MILLISECONDS_IN_SECOND;
+        timeBuffer = Math.floor(timeBuffer / DurationFormatter.MILLISECONDS_IN_SECOND);
+        const seconds = timeBuffer % DurationFormatter.SECONDS_IN_MINUTE;
+        timeBuffer = Math.floor(timeBuffer / DurationFormatter.SECONDS_IN_MINUTE);
+        const minutes = timeBuffer % DurationFormatter.MINUTES_IN_HOUR;
+        timeBuffer = Math.floor(timeBuffer / DurationFormatter.MINUTES_IN_HOUR);
+        const hours = timeBuffer % DurationFormatter.HOURS_IN_DAY;
+        timeBuffer = timeBuffer / DurationFormatter.HOURS_IN_DAY;
 
         const twoDigitsHours = DurationFormatter.ensureTwoDigits(hours);
         const twoDigitsMinutes = DurationFormatter.ensureTwoDigits(minutes);
