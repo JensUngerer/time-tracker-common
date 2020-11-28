@@ -1,7 +1,7 @@
 import { ITimeEntryDocument } from "../mongoDB/iTimeEntryDocument";
 import { IDuration } from "../iDuration";
 import { IDate } from "../iDate";
-import { DurationFormatter } from "./durationFormatter";
+import { Constants } from "../constants";
 
 export class DurationCalculator {
     private static yearMonthDate(aFullDate: Date) {
@@ -48,13 +48,13 @@ export class DurationCalculator {
     public static getSumDataStructureFromMilliseconds(durationInMilliseconds: number): IDuration {
         let timeBuffer = durationInMilliseconds;
         // const milliseconds = timeBuffer % DurationFormatter.MILLISECONDS_IN_SECOND;
-        timeBuffer = Math.floor(timeBuffer / DurationFormatter.MILLISECONDS_IN_SECOND);
-        const seconds = timeBuffer % DurationFormatter.SECONDS_IN_MINUTE;
-        timeBuffer = Math.floor(timeBuffer / DurationFormatter.SECONDS_IN_MINUTE);
-        const minutes = timeBuffer % DurationFormatter.MINUTES_IN_HOUR;
-        timeBuffer = Math.floor(timeBuffer / DurationFormatter.MINUTES_IN_HOUR);
-        const hours = timeBuffer % DurationFormatter.HOURS_IN_DAY;
-        timeBuffer = timeBuffer / DurationFormatter.HOURS_IN_DAY;
+        timeBuffer = Math.floor(timeBuffer / Constants.MILLISECONDS_IN_SECOND);
+        const seconds = timeBuffer % Constants.SECONDS_IN_MINUTE;
+        timeBuffer = Math.floor(timeBuffer / Constants.SECONDS_IN_MINUTE);
+        const minutes = timeBuffer % Constants.MINUTES_IN_HOUR;
+        timeBuffer = Math.floor(timeBuffer / Constants.MINUTES_IN_HOUR);
+        const hours = timeBuffer % Constants.HOURS_IN_DAY;
+        timeBuffer = timeBuffer / Constants.HOURS_IN_DAY;
         return {
             hours,
             minutes,

@@ -1,13 +1,6 @@
 import { DurationCalculator } from "./durationCalculator";
 
 export class DurationFormatter {
-    public static MILLISECONDS_IN_SECOND = 1000;
-    public static SECONDS_IN_MINUTE = 60;
-    public static MINUTES_IN_HOUR = 60;
-    public static HOURS_IN_DAY = 24;
-
-    public static hoursInMilliseconds = (1000 * 60 * 60);
-
     private static ensureTwoDigits(aValue: number) {
         const convertedValue = aValue.toString();
         if (convertedValue.length === 2) {
