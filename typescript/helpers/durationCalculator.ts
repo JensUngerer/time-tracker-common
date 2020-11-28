@@ -1,7 +1,8 @@
 import { ITimeEntryDocument } from "../mongoDB/iTimeEntryDocument";
 import { IDuration } from "../iDuration";
 import { IDate } from "../iDate";
-import { Constants } from "../constants";
+// import { Constants } from "../constants";
+import { DateTime, Duration } from 'luxon';
 
 export class DurationCalculator {
     private static yearMonthDate(aFullDate: Date) {
@@ -46,19 +47,11 @@ export class DurationCalculator {
     }
 
     public static getSumDataStructureFromMilliseconds(durationInMilliseconds: number): IDuration {
-        let timeBuffer = durationInMilliseconds;
-        // const milliseconds = timeBuffer % DurationFormatter.MILLISECONDS_IN_SECOND;
-        timeBuffer = Math.floor(timeBuffer / Constants.MILLISECONDS_IN_SECOND);
-        const seconds = timeBuffer % Constants.SECONDS_IN_MINUTE;
-        timeBuffer = Math.floor(timeBuffer / Constants.SECONDS_IN_MINUTE);
-        const minutes = timeBuffer % Constants.MINUTES_IN_HOUR;
-        timeBuffer = Math.floor(timeBuffer / Constants.MINUTES_IN_HOUR);
-        const hours = timeBuffer % Constants.HOURS_IN_DAY;
-        timeBuffer = timeBuffer / Constants.HOURS_IN_DAY;
+        const duration: Duration = Duration.fromMillis(durationInMilliseconds);
         return {
-            hours,
-            minutes,
-            seconds
+            hours: duration.hours,
+            minutes: duration.minutes,
+            seconds: duration.seconds
         };
     }
 
@@ -99,7 +92,11 @@ export class DurationCalculator {
     }
 
     public static getTimeDifferenceInMilliseconds(endTime: Date, startTime: Date): number {
-        const theDuration = endTime.getTime() - startTime.getTime();
-        return theDuration;
+        const end = DateTime.fromJSDate(endTime);
+        const start = DateTime.fromJSDate(startTime);
+        const diff = end.diff(start);
+        return diff.milliseconds;
+        // const theDuration = endTime.getTime() - startTime.getTime();
+        // return theDuration;
     }
 }

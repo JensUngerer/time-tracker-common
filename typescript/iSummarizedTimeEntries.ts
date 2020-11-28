@@ -1,8 +1,10 @@
+import { Duration } from "luxon";
+
 export interface ISummarizedTimeEntries {
     taskCategory: string;
-    overallDurationSum: number;
+    overallDurationSum: Duration;
     overallDurationSumFraction: number;
-    durationSumByTaskId: { [taskId: string]: number };
-    durationSumFractionByTaskId: { [taskId: string]: number };
+    durationSumByTaskId: { [taskId: string]: Duration };
+    durationSumFractionByTaskId: { [taskId: string]: Duration };
     _timeEntryIds: string[];
 }

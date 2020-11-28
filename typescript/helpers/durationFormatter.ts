@@ -1,13 +1,14 @@
-import { DurationCalculator } from "./durationCalculator";
+import { Duration } from "luxon";
+// import { DurationCalculator } from "./durationCalculator";
 
 export class DurationFormatter {
-    private static ensureTwoDigits(aValue: number) {
-        const convertedValue = aValue.toString();
-        if (convertedValue.length === 2) {
-            return convertedValue;
-        }
-        return '0' + convertedValue;
-    }
+    // private static ensureTwoDigits(aValue: number) {
+    //     const convertedValue = aValue.toString();
+    //     if (convertedValue.length === 2) {
+    //         return convertedValue;
+    //     }
+    //     return '0' + convertedValue;
+    // }
 
     // private static ensureThreeDigits(aValue: number) {
     //     const convertedValue = aValue.toString();
@@ -23,13 +24,8 @@ export class DurationFormatter {
     // }
 
     static convertToDuration(durationInMilliseconds: number) {
-        const durationStructure = DurationCalculator.getSumDataStructureFromMilliseconds(durationInMilliseconds);
-        const twoDigitsHours = DurationFormatter.ensureTwoDigits(durationStructure.hours);
-        const twoDigitsMinutes = DurationFormatter.ensureTwoDigits(durationStructure.minutes);
-        const twoDigitsSeconds = DurationFormatter.ensureTwoDigits(durationStructure.seconds);
-        // const threeDigitsMilliseconds = DurationFormatter.ensureThreeDigits(durationStructure.milliseconds);
-        return twoDigitsHours + ':' + twoDigitsMinutes + ':' + twoDigitsSeconds; // + '.' + threeDigitsMilliseconds;
-
+        const duration: Duration = Duration.fromMillis(durationInMilliseconds);
+        return duration.toFormat('hh:mm:ss');
         // TODO: library?
         // https://stackoverflow.com/questions/47223964/convert-milliseconds-to-hhmmss-format-in-angular
     }
