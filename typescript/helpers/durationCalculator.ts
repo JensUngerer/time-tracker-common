@@ -16,7 +16,7 @@ export class DurationCalculator {
         // const year = aFullDate.getFullYear();
         // const month = aFullDate.getMonth();
         // const date = aFullDate.getDate() + 1;
- 
+
         const dayDate = DurationCalculator.yearMonthDate(aFullDate);
         // https://stackoverflow.com/questions/3894048/what-is-the-best-way-to-initialize-a-javascript-date-to-midnight
         // dayDate.setHours(0, 0, 0, 0);
@@ -41,18 +41,20 @@ export class DurationCalculator {
         return {
             dayOfMonth: day,
             month,
-            year   
+            year
         }
     }
 
-    public static getSumDataStructureFromMilliseconds(milliseconds: number): IDuration {
-        milliseconds = Math.floor(milliseconds / DurationFormatter.MILLISECONDS_IN_SECOND);
-        const seconds = milliseconds %  DurationFormatter.SECONDS_IN_MINUTE;
-        milliseconds = Math.floor(milliseconds /  DurationFormatter.SECONDS_IN_MINUTE);
-        const minutes = milliseconds % DurationFormatter.SECONDS_IN_MINUTE;
-        milliseconds = Math.floor(milliseconds / DurationFormatter.MINUTES_IN_HOUR);
-        const hours = milliseconds % DurationFormatter.MINUTES_IN_HOUR;
-
+    public static getSumDataStructureFromMilliseconds(durationInMilliseconds: number): IDuration {
+        let timeBuffer = durationInMilliseconds;
+        // const milliseconds = timeBuffer % DurationFormatter.MILLISECONDS_IN_SECOND;
+        timeBuffer = Math.floor(timeBuffer / DurationFormatter.MILLISECONDS_IN_SECOND);
+        const seconds = timeBuffer % DurationFormatter.SECONDS_IN_MINUTE;
+        timeBuffer = Math.floor(timeBuffer / DurationFormatter.SECONDS_IN_MINUTE);
+        const minutes = timeBuffer % DurationFormatter.MINUTES_IN_HOUR;
+        timeBuffer = Math.floor(timeBuffer / DurationFormatter.MINUTES_IN_HOUR);
+        const hours = timeBuffer % DurationFormatter.HOURS_IN_DAY;
+        timeBuffer = timeBuffer / DurationFormatter.HOURS_IN_DAY;
         return {
             hours,
             minutes,
