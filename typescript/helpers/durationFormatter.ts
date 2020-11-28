@@ -31,6 +31,6 @@ export class DurationFormatter {
         return twoDigitsHours + ':' + twoDigitsMinutes + ':' + twoDigitsSeconds; // + '.' + threeDigitsMilliseconds;
 
         // TODO: library?
-        // return formatDate(durationInMilliseconds, ContextComponent.formatDate, this.currentLocale);
+        // https://stackoverflow.com/questions/47223964/convert-milliseconds-to-hhmmss-format-in-angular
     }
 }
