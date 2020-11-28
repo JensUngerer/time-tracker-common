@@ -25,7 +25,8 @@ export class DurationFormatter {
 
     static convertToDuration(durationInMilliseconds: number) {
         const duration: Duration = Duration.fromMillis(durationInMilliseconds);
-        return duration.toFormat('hh:mm:ss');
+        // return duration.toFormat('hh:mm:ss');
+        return duration;
         // TODO: library?
         // https://stackoverflow.com/questions/47223964/convert-milliseconds-to-hhmmss-format-in-angular
     }
