@@ -8,8 +8,8 @@ export class Constants {
     static formatDateTime = 'HH:mm:ss';
     static formatPercent = '2.0-0';
     static formatNumber = '1.2-2';
-    static formatMilliseconds: '7.0-0'; 
-    static contextDurationFormat: 'hh:mm:ss';
-    static contextIsoFormat: 'yyyy-MM-dd';
-    static contextCsvFormat: 'yyyy-MM-dd_hh-mm-ss';
+    static formatMilliseconds = '7.0-0';
+    static contextDurationFormat = 'hh:mm:ss';
+    static contextIsoFormat = 'yyyy-MM-dd';
+    static contextCsvFormat = 'yyyy-MM-dd_hh-mm-ss';
 }
