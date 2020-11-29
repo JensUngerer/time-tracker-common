@@ -12,4 +12,6 @@ export class Constants {
     static contextDurationFormat = 'hh:mm:ss';
     static contextIsoFormat = 'yyyy-MM-dd';
     static contextCsvFormat = 'yyyy-MM-dd_hh-mm-ss';
+
+    static CONTEXT_BASE_FILE_NAME = "Workflow-Context";
 }
