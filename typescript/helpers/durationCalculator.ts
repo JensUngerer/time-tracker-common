@@ -2,7 +2,9 @@ import { ITimeEntryDocument } from "../mongoDB/iTimeEntryDocument";
 import { IDuration } from "../iDuration";
 import { IDate } from "../iDate";
 // import { Constants } from "../constants";
-import { DateTime, Duration } from 'luxon';
+// import { DateTime, Duration } from 'luxon';
+import { DateTime,Duration } from "luxon";
+
 
 export class DurationCalculator {
     private static yearMonthDate(aFullDate: Date) {
@@ -72,8 +74,10 @@ export class DurationCalculator {
     }
     public static calculateDuration(doc: ITimeEntryDocument): string {
         let milliseconds = DurationCalculator.calculateTimeDifferenceWithoutPauses(doc);
-        const duration = DurationCalculator.getSumDataStructureFromMilliseconds(milliseconds);
-        return DurationCalculator.getFullDurationStr(duration.hours, duration.minutes, duration.seconds);
+        const duration = Duration.fromMillis(milliseconds);
+        return duration.toFormat('hh:mm:ss');
+        // const duration = DurationCalculator.getSumDataStructureFromMilliseconds(milliseconds);
+        // return DurationCalculator.getFullDurationStr(duration.hours, duration.minutes, duration.seconds);
     }
 
     public static ensureTwoDigits(aNumber: number): string {
