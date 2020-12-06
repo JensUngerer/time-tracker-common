@@ -15,7 +15,7 @@ export class DurationHelper {
 
         millisecondsSum += seconds * Constants.MILLISECONDS_IN_SECOND;
 
-        millisecondsSum += minutes * Constants.MILLISECONDS_IN_MINUTES;
+        millisecondsSum += minutes * Constants.MILLISECONDS_IN_MINUTE;
 
         millisecondsSum += hours * Constants.MILLISECONDS_IN_HOUR;
 

@@ -4,7 +4,7 @@ export class Constants {
     static MINUTES_IN_HOUR = 60;
     static HOURS_IN_DAY = 24;
 
-    static MILLISECONDS_IN_MINUTES = Constants.MILLISECONDS_IN_SECOND * 
+    static MILLISECONDS_IN_MINUTE = Constants.MILLISECONDS_IN_SECOND * 
     Constants.SECONDS_IN_MINUTE;
    
     static MILLISECONDS_IN_HOUR = Constants.MILLISECONDS_IN_SECOND * 
