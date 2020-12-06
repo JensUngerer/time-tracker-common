@@ -4,7 +4,7 @@ export interface ITask {
     taskId: string;
     taskCategory: string;
     groupCategory: string;
-    durationSumInMillisecondsMap: {[dayGetTime: number]: number};
+    durationSumInMillisecondsMap: {[dayGetTime: number]: object};
     _bookingDeclarationId: string;
     _projectId?: string;
 }
