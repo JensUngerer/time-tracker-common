@@ -1,3 +1,5 @@
+import { DurationUnit } from "luxon";
+
 export class Constants {
     static MILLISECONDS_IN_SECOND = 1000;
     static SECONDS_IN_MINUTE = 60;
@@ -26,4 +28,6 @@ export class Constants {
     static contextCsvFormat = 'yyyy-MM-dd_hh-mm-ss';
 
     static CONTEXT_BASE_FILE_NAME = "Workflow-Context";
+
+    static shiftToParameter: DurationUnit[] = ['hours', 'minutes', 'seconds', 'milliseconds'];
 }
