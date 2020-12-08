@@ -50,6 +50,7 @@ var routes = {
     timEntriesCollectionName: 'time-entries',
     timeEntriesBodyProperty: 'timeEntries',
     timeEntries: '/NodeJS/timeEntries',
+    isCsvFileWrittenProperty: 'isCsvFileWritten',
 
     endDateProperty: 'endTime',
     timeEntriesStopPathSuffix: '/stop',
