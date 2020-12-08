@@ -51,6 +51,8 @@ var routes = {
     timeEntriesBodyProperty: 'timeEntries',
     timeEntries: '/NodeJS/timeEntries',
     isCsvFileWrittenProperty: 'isCsvFileWritten',
+    postCsvFileTriggerSuffix: '/csvFileWrite',
+    isCsvWrittenTriggerPropertyName: 'isCsvFileWrittenTrigger',
 
     endDateProperty: 'endTime',
     timeEntriesStopPathSuffix: '/stop',
