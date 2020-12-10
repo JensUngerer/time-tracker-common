@@ -13,6 +13,7 @@ export interface ITimeRecordsDocumentData {
     // _projectId: string;
     // durationInMilliseconds: number; // TODO: re - enable for debugging purposes...
     durationInHours: number;
+    durationInMilliseconds: object;
     _timeEntryIds: string[];
     _bookingDeclarationId: string;
     _taskId: string;
