@@ -8,6 +8,9 @@ var routes = {
     hostname: 'localhost',
     port: 3021,
     databaseName: 'timeTracker',
+    sessionsDataBaseName: 'express-session',
+    sessionsCollectionName: 'sessions',
+    secret: 'theSpecialSecret',
 
     collectionNamePropertyName: 'propertyName',
 
