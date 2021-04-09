@@ -5,7 +5,7 @@ var routes = {
     viewsPrefix: 'view/',
 
     url: 'mongodb://localhost:27021',
-    hostname: 'localhost',
+    hostname: '0.0.0.0',
     port: 3021,
     databaseName: 'timeTracker',
     sessionsDataBaseName: 'express-session',
