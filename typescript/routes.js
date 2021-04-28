@@ -66,6 +66,7 @@ var routes = {
     timeEntryIdProperty: 'timeEntryId',
     isBookingBasedPropertyName: 'isBookingBased',
     timeEntriesIntervalSuffix: '/interval',
+    timeEntriesTryStopSuffix: '/try-stop',
 
     startTimeProperty: 'startTime',
 
