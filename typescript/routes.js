@@ -85,6 +85,8 @@ var routes = {
 
     isTakenCareIsDisabledPropertyName: 'isTakenCareIsDisabled',
 
-    durationSumInMillisecondsPropertyName: 'durationSumInMillisecondsMap'
+    durationSumInMillisecondsPropertyName: 'durationSumInMillisecondsMap',
+
+    sessionTimEntriesCollectionName: 'session-time-entries'
 }
 module.exports = routes;
