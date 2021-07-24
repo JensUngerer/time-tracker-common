@@ -57,6 +57,8 @@ var routes = {
     postCsvFileTriggerSuffix: '/csvFileWrite',
     isCsvWrittenTriggerPropertyName: 'isCsvFileWrittenTrigger',
 
+    sessionTimeEntry: '/NodeJS/sessionTimeEntry',
+
     endDateProperty: 'endTime',
     timeEntriesStopPathSuffix: '/stop',
     timeEntriesDeletePathSuffix: '/delete',

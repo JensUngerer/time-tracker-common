@@ -1,7 +1,9 @@
+import { DurationObject } from "luxon";
+
 export interface ISessionTimeEntry {
     startTime: Date;
     endTime?: Date;
     day?: Date;
-    durationInMilliseconds?: Object;
+    durationInMilliseconds?: DurationObject;
     timeEntryId: string;
 }
