@@ -3,16 +3,56 @@ import { IDuration } from "../iDuration";
 import { IDate } from "../iDate";
 // import { Constants } from "../constants";
 // import { DateTime, Duration } from 'luxon';
-import { DateTime,Duration } from "luxon";
+import { DateTime, Duration } from "luxon";
 
 
 export class DurationCalculator {
+    // private static NUMBER_OF_DAYS_IN_A_WEEK = 7;
+    // private static NUMBEER_OF_DAYS_IN_MONTH_MAP = {
+    //     0: 31,
+    //     1: 31,
+    //     2: 31,
+    //     3: 31,
+    //     4: 31,
+    //     5: 31,
+    //     6: 31,
+    //     7: 31,
+    //     8: 31,
+    //     9: 31,
+    //     10: 31,
+    //     11: 31
+    // };
+
+    // private static yearMonthDateNextDay(aFullDate: Date) {
+    //     const year = aFullDate.getUTCFullYear();
+    //     const month = aFullDate.getUTCMonth();
+    //     const ADDITIONAL_DAY_INCREMENT = 1;
+    //     const date = aFullDate.getUTCDate() + 1 + ADDITIONAL_DAY_INCREMENT;
+    //     const dayDate = new Date(year, month, date);
+    //     return dayDate;
+    // }
+
     private static yearMonthDate(aFullDate: Date) {
         const year = aFullDate.getUTCFullYear();
         const month = aFullDate.getUTCMonth();
+        // TODO: add modulo in case of overflow
         const date = aFullDate.getUTCDate() + 1;
         const dayDate = new Date(year, month, date);
         return dayDate;
+    }
+
+    public static getNextDayFrom(aFullDate: Date) {
+        const dayDate = this.getDayFrom(aFullDate);
+        // https://stackoverflow.com/questions/53713772/displaying-time-relative-to-a-given-using-luxon-library
+        let luxonDateTimeFromDay: DateTime = DateTime.fromJSDate(dayDate);
+        luxonDateTimeFromDay = luxonDateTimeFromDay.plus({ days: 1 });
+
+        // const dayDate = DurationCalculator.yearMonthDateNextDay(aFullDate);
+        // // https://stackoverflow.com/questions/3894048/what-is-the-best-way-to-initialize-a-javascript-date-to-midnight
+        // // dayDate.setHours(0, 0, 0, 0);
+        // dayDate.setUTCHours(0, 0, 0, 0);
+        const nextDay = luxonDateTimeFromDay.toJSDate();
+        return nextDay;
     }
 
     public static getDayFrom(aFullDate: Date) {
