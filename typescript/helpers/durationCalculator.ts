@@ -35,8 +35,7 @@ export class DurationCalculator {
     private static yearMonthDate(aFullDate: Date) {
         const year = aFullDate.getUTCFullYear();
         const month = aFullDate.getUTCMonth();
-        // TODO: add modulo in case of overflow
-        const date = aFullDate.getUTCDate() + 1;
+        const date = aFullDate.getUTCDate();
         const dayDate = new Date(year, month, date);
         return dayDate;
     }
