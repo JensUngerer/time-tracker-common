@@ -41,7 +41,7 @@ export class DurationCalculator {
         // return dayDate;
         // const dateTime = new DateTime();
         const dateTime = DateTime.utc(aFullDate.getFullYear(),
-            aFullDate.getMonth(),
+            aFullDate.getMonth() + 1,
             aFullDate.getDate(),
             0,
             0,
