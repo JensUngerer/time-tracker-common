@@ -33,11 +33,24 @@ export class DurationCalculator {
     // }
 
     private static yearMonthDate(aFullDate: Date) {
-        const year = aFullDate.getUTCFullYear();
-        const month = aFullDate.getUTCMonth();
-        const date = aFullDate.getUTCDate();
-        const dayDate = new Date(year, month, date);
-        return dayDate;
+        // https://moment.github.io/luxon/demo/global.html
+        // const year = aFullDate.getUTCFullYear();
+        // const month = aFullDate.getUTCMonth();
+        // const date = aFullDate.getUTCDate();
+        // const dayDate = new Date(year, month, date);
+        // return dayDate;
+        // const dateTime = new DateTime();
+        const dateTime = DateTime.utc(aFullDate.getFullYear(),
+            aFullDate.getMonth(),
+            aFullDate.getDate(),
+            0,
+            0,
+            0,
+            0
+        )
+        // const utc = dateTime.toUTC()
+        return dateTime.toJSDate();
+
     }
 
     public static getNextDayFrom(aFullDate: Date) {
@@ -62,7 +75,7 @@ export class DurationCalculator {
         const dayDate = DurationCalculator.yearMonthDate(aFullDate);
         // https://stackoverflow.com/questions/3894048/what-is-the-best-way-to-initialize-a-javascript-date-to-midnight
         // dayDate.setHours(0, 0, 0, 0);
-        dayDate.setUTCHours(0, 0, 0, 0);
+        // dayDate.setUTCHours(0, 0, 0, 0);
         return dayDate;
     }
 
