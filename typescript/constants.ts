@@ -31,5 +31,5 @@ export class Constants {
     static CONTEXT_BASE_FILE_NAME = "Workflow-Context";
 
     static shiftToParameter: DurationUnit[] = ['hours', 'minutes', 'seconds', 'milliseconds'];
-    static durationInitializationZero = {years: 0, months: 0, days: 0, hours: 0, minutes: 0, seconds: 0, milliseconds: 0}; 
+    static durationInitializationZero = {years: 0, months: 0, days: 0, hours: 0, minutes: 0, seconds: 0, milliseconds: 0};
 }

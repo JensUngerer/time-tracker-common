@@ -90,6 +90,7 @@ var routes = {
     durationSumInMillisecondsPropertyName: 'durationSumInMillisecondsMap',
 
     sessionTimEntriesCollectionName: 'session-time-entries',
-    workingTimeSuffix: '/working-time'
+    workingTimeSuffix: '/working-time',
+    weeklyWorkingTimeSuffix: '/weekly-working-time'
 }
 module.exports = routes;
