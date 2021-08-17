@@ -1,9 +1,14 @@
-export interface ITimeEntry {
+import { DurationObject } from "luxon";
+
+export interface ITimeEntryBase {
     timeEntryId: string;
-    _taskId: string;
     startTime: Date;
-    endTime: Date;
-    durationInMilliseconds: object;
-    day: Date;
+    endTime?: Date;
+    durationInMilliseconds?: DurationObject;
+    day?: Date;
+}
+
+export interface ITimeEntry extends ITimeEntryBase {
+    _taskId: string;
     _bookingDeclarationId: string;
 }
