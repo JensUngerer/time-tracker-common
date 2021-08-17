@@ -92,6 +92,7 @@ var routes = {
     sessionTimEntriesCollectionName: 'session-time-entries',
     workingTimeSuffix: '/working-time',
     weeklyWorkingTimeSuffix: '/weekly-working-time',
-    workingTimeEntriesSuffix: '/working-time-entries'
+    workingTimeEntriesSuffix: '/working-time-entries',
+    workingTimePausesSuffix: '/working-time-pauses'
 }
 module.exports = routes;
