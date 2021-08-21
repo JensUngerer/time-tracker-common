@@ -93,6 +93,7 @@ var routes = {
     workingTimeSuffix: '/working-time',
     weeklyWorkingTimeSuffix: '/weekly-working-time',
     workingTimeEntriesSuffix: '/working-time-entries',
-    workingTimePausesSuffix: '/working-time-pauses'
+    workingTimePausesSuffix: '/working-time-pauses',
+    workingTimPostPropertyName: 'workingTimeEntry'
 }
 module.exports = routes;
