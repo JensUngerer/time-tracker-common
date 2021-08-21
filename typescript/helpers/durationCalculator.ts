@@ -4,6 +4,7 @@ import { IDate } from "../iDate";
 // import { Constants } from "../constants";
 // import { DateTime, Duration } from 'luxon';
 import { DateTime, Duration } from "luxon";
+import { Constants } from "../constants";
 
 
 export class DurationCalculator {
@@ -31,6 +32,15 @@ export class DurationCalculator {
     //     const dayDate = new Date(year, month, date);
     //     return dayDate;
     // }
+
+    static getDurationFrom(endTime: Date, startTime: Date) {
+        const durationMs = endTime.getTime() - startTime.getTime();
+        let duration = Duration.fromMillis(durationMs);
+        duration = duration.shiftTo(...Constants.shiftToParameter);
+    
+        return duration;
+      }
+    
 
     private static yearMonthDate(aFullDate: Date) {
         // https://moment.github.io/luxon/demo/global.html
