@@ -34,13 +34,18 @@ export class DurationCalculator {
     // }
 
     static getDurationFrom(endTime: Date, startTime: Date) {
+        if (!endTime ||
+            typeof endTime.getTime !== 'function' ||
+            !startTime ||
+            typeof startTime.getTime !== 'function') {
+            return Duration.fromObject(Constants.durationInitializationZero);
+        }
         const durationMs = endTime.getTime() - startTime.getTime();
         let duration = Duration.fromMillis(durationMs);
         duration = duration.shiftTo(...Constants.shiftToParameter);
-    
+
         return duration;
-      }
-    
+    }
 
     private static yearMonthDate(aFullDate: Date) {
         // https://moment.github.io/luxon/demo/global.html
