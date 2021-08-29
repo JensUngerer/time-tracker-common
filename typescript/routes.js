@@ -70,6 +70,7 @@ var routes = {
     timeEntriesIntervalSuffix: '/interval',
     emptyTimeEntriesSuffix: '/empty-time-entries',
     timeEntriesTryStopSuffix: '/try-stop',
+    rawTimeEntriesSuffix: '/time-entries-in-interval',
 
     startTimeProperty: 'startTime',
 
