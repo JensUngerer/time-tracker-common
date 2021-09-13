@@ -27,7 +27,7 @@ export class Constants {
     static contextIsoFormat = 'yyyy-MM-dd';
     // https://moment.github.io/luxon/docs/manual/formatting.html#table-of-tokens
     static contextCsvFormat = 'yyyy-MM-dd_HH-mm-ss';
-
+    static contextDurationFormatFull = 'hh:mm:ss,SSS';
     static CONTEXT_BASE_FILE_NAME = "Workflow-Context";
 
     static shiftToParameter: DurationUnit[] = ['hours', 'minutes', 'seconds', 'milliseconds'];
